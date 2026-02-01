@@ -45,3 +45,5 @@ export interface AppState {
   polls: Poll[];
   userVotes: Map<string, string>; // pollId -> optionId
 }
+
+export type Page = | 'home'| 'login' | 'signup' | 'create' | 'vote' | 'results' | 'dashboard' | 'share';

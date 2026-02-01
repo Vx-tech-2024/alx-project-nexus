@@ -9,9 +9,8 @@ import { CreatePollWizard } from './components/CreatePollWizard';
 import { PollVotingPage } from './components/PollVotingPage';
 import { ResultsPage } from './components/ResultsPage';
 import {  SharePoll } from './components/SharePoll';
-import {  Toaster } from './components/subcomponents/Toaster';
-
-type Page = 'home' | 'login' | 'signup' | 'create' | 'vote' | 'results' | 'dashboard' | 'share';
+import { Toaster } from 'sonner';
+import { Page } from './types/index';
 
 interface RouteState {
   page: Page;
@@ -19,6 +18,7 @@ interface RouteState {
 }
 
 function App() {
+  console.log('app render')
   const [route, setRoute] = useState<RouteState>({ page: 'home'});
   
   const navigate = (page: Page, pollId?: string) => {
@@ -37,6 +37,7 @@ function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [route.page]);
+  
 
   return (
     <AppProvider>
@@ -60,15 +61,30 @@ function App() {
           )}
           
         </main>
+        
         <Toaster 
           position="top-right"
           expand={false}
           richColors
           closeButton
         />
+        
       </div>
     </AppProvider>
   );
 }
 
 export default App;
+
+
+
+/*function App() {
+  return (
+    <div className="h-screen flex items-center justify-center bg-blue-500 text-white text-3xl">
+      Tailwind inafanya
+    </div>
+  );
+}
+
+export default App;
+*/

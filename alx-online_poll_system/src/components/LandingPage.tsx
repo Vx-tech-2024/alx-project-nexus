@@ -1,15 +1,16 @@
 import React from 'react';
 import  { useState } from 'react';
 import { BarChart3, Clock, Users, Zap, TrendingUp, Shield, Search } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Card } from '@/app/components/ui/card';
-import { Input } from '@/app/components/ui/input';
-import { Badge } from '@/app/components/ui/badge';
-import { useApp } from './context/AppContext';
-import { Poll } from './types/index';
-
+import { Button } from './subcomponents/button';
+import { Card } from './subcomponents/card';
+import { Input } from './subcomponents/input';
+import { Badge } from './subcomponents/badge';
+import { useApp } from '../context/AppContext';
+import { Poll } from '../types/index';
+import { Page } from '../types/index';
 interface LandingPageProps {
-  onNavigate: (page: string, pollId?: string) => void;
+  onNavigate: (page: Page, pollId?: string) => void
+
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
@@ -95,8 +96,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                        </div>
                        <h3 className="font-bold text-gray-900 mb-3 text-lg">easy Sharing</h3>
                        <p className="text-sm text-gray-600 leading-relaxed">
-                         One vote per user option that prevents duplic voting.
+                         Share Polls via link, QR Code or social media on a click.
                        </p>
+                    </Card>
+
+                    <Card className="p-8 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-green-50/30">
+                      <div className="bg-gradient-to-br from-green-500 to-green-600 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-green-500/40">
+                        <Shield className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="font-bold text-gray-900 mb-3 text-lg">Vote Protection</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                         One vote per user to prevent voters from voting multiple times
+                      </p>
                     </Card>
                 </div>
             </div>

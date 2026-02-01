@@ -1,16 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { BarChart3, Mail, Lock, User, AlertCircle, CheckCircle } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
-import { Label } from '@/app/components/ui/label';
-import { Card } from '@/app/components/ui/card';
-import { useApp } from './context/AppContext';
-import { toast } from './components/sonner';
+import { Button } from './subcomponents/button';
+import { Input } from './subcomponents/input';
+import { Label } from './subcomponents/label';
+import { Card } from './subcomponents/card';
+import { useApp } from '../context/AppContext';
+import { Toaster } from './subcomponents/sonner';
+import { toast } from "sonner";
+import { Page } from '../types/index'
 
 interface   AuthPageProps{
     mode: 'login' | 'signup';
-    onNavigate: (page: string) => void;
+    onNavigate: (page: Page, pollId?: string) => void
+
 }
 
 export const AuthPage: React.FC<AuthPageProps>= ({ mode, onNavigate }) => {

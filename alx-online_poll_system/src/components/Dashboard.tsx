@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import React from 'react';
 import { BarChart3, Plus, Trash2, Share2, Eye, Clock, Users, TrendingUp, Edit, MoreVertical, AlertCircle, CheckCircle} from 'lucide-react';
-import { Button } from './components/button';
-import { Card } from '@/app/components/ui/card';
-import { Badge } from '@/app/components/ui/badge';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from '@/app/components/ui/dropdown-menu';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle} from '@/app/components/ui/alert-dialog';
-import { useApp } from './context/AppContext';
-import { toast } from 'sonner';
-import { Poll } from './types/index';
+import { Button } from './subcomponents/button';
+import { Card } from './subcomponents/card';
+import { Badge } from './subcomponents/badge';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from './subcomponents/dropdown-menu';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle} from './subcomponents/alert_dialog';
+import { useApp } from '../context/AppContext';
+import { Toaster } from './subcomponents/sonner';
+import { toast } from "sonner";
+import { Poll } from '../types/index';
+import { Page } from '../types/index';
 
 interface DashboardProps {
-    onNavigate: (page: string, pollId?: string) => void;
+    onNavigate: (page: Page, pollId?: string) => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {

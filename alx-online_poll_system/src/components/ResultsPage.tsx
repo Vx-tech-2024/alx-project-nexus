@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { TrendingUp, Users, Clock, Share2, BarChart3, PieChart, Download, RefreshCw, Crown, CheckCircle2 } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Card } from '@/app/components/ui/card';
-import { Badge } from '@/app/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { useApp } from './context/AppContext';
+import { Button } from './subcomponents/button';
+import { Card } from './subcomponents/card';
+import { Badge } from './subcomponents/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './subcomponents/tabs';
+import { useApp } from '../context/AppContext';
 import {
   BarChart,
   Bar,
@@ -19,10 +19,11 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-
+import { Page } from '../types/index';
 interface ResultsPageProps {
   pollId: string;
-  onNavigate: (page: string, pollId?: string) => void;
+  onNavigate: (page: Page, pollId?: string) => void;
+
 }
 
 export const ResultsPage: React.FC<ResultsPageProps> = ({ pollId, onNavigate }) => {

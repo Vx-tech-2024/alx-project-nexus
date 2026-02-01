@@ -1,16 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 import { Check, AlertCircle, Clock, Users, TrendingUp, ChevronRight, Lock, CheckCircle2 } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Card } from '@/app/components/ui/card';
-import { Badge } from '@/app/components/ui/badge';
-import { useApp } from './context/AppContext';
-import { toast } from 'sonner';
-import { Poll, PollOption } from './types/index';
-
+import { Button } from './subcomponents/button';
+import { Card } from './subcomponents/card';
+import { Badge } from './subcomponents/badge';
+import { useApp } from '../context/AppContext';
+import { Toaster } from './subcomponents/sonner';
+import { toast } from "sonner";
+import { Poll, PollOption } from '../types/index';
+import { Page } from '../types/index';
 interface PollVotingPageProps {
   pollId: string;
-  onNavigate: (page: string, pollId?: string) => void;
+  onNavigate: (page: Page, pollId?: string) => void;
+
 }
 
 export const PollVotingPage: React.FC<PollVotingPageProps> = ({ pollId, onNavigate }) => {

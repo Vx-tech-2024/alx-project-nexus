@@ -1,11 +1,12 @@
 import React from 'react';
 import { BarChart3, Plus, User, LogOut, Home, LayoutDashboard } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
+import { Button } from './components/subcomponents/button';
 import { useApp } from './context/AppContext';
+import { Page } from './types/index'
 
 interface NavigationProps {
   currentPage: string;
-  onNavigate: (page: string) => void;
+  onNavigate: (page: Page, pollId ?: string) => void;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {

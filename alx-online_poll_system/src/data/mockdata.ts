@@ -10,7 +10,7 @@ export const mockPolls: Poll[] = [
   {
     id: '1',
     title: 'What is your favorite programming language?',
-    description: 'Help us understand developer preferences in 2026',
+    description: 'Help us understand developer preferences in 2026...careful here vibecoders...',
     options: [
       { id: 'opt1', text: 'JavaScript/TypeScript', votes: 245 },
       { id: 'opt2', text: 'Python', votes: 189 },
@@ -71,7 +71,7 @@ export const mockPolls: Poll[] = [
   {
     id: '4',
     title: 'Favorite pizza topping?',
-    description: 'The age-old question...',
+    description: 'Lets see them tastes...',
     options: [
       { id: 'opt1', text: 'Pepperoni', votes: 234 },
       { id: 'opt2', text: 'Mushrooms', votes: 156 },

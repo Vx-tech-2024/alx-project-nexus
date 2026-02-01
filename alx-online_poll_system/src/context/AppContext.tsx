@@ -80,18 +80,18 @@ export const AppProvider : React.FC<{ children: ReactNode }> = ({ children }) =>
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         const newPoll: Poll = {
-            ...pollData,
+            ...poll,
             id: Date.now().toString(),
             creatorId: user?.id  || 'unknown',
             creatorName: user?.name || 'unknown',
             createdAt: new Date(),
             totalVotes: 0,
             votedUsers: [],
-            options: pollData.options.map(opt => ({ ...opt, votes: 0})),
+            options: poll.options.map(opt => ({ ...opt, votes: 0})),
         };
 
-        if (pollData.duration) {
-            newPoll.expiresAt = new Date(Date.now() + pollData.duration * 60 * 60 * 1000);
+        if (poll.duration) {
+            newPoll.expiresAt = new Date(Date.now() + poll.duration * 60 * 60 * 1000);
         }
 
         setPolls(prev => [newPoll, ...prev]);

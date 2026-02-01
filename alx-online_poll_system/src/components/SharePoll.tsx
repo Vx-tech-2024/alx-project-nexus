@@ -1,17 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import { Copy, Check, QrCode, Facebook, Twitter, Mail, Link2, MessageCircle, Share2, Download, CheckCircle } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Card } from '@/app/components/ui/card';
-import { Input } from '@/app/components/ui/input';
-import { Badge } from '@/app/components/ui/badge';
-import { useApp } from './context/AppContext';
+import { Button } from './subcomponents/button';
+import { Card } from './subcomponents/card';
+import { Input } from './subcomponents/input';
+import { Badge } from './subcomponents/badge';
+import { useApp } from '../context/AppContext';
 import { toast } from 'sonner';
 import { url } from 'inspector';
-
+import { Page } from '../types/index';
 interface SharePollProps {
   pollId: string;
-  onNavigate: (page: string, pollId?: string) => void;
+  onNavigate: (page: Page, pollId?: string) => void;
 }
 
 export const SharePoll: React.FC<SharePollProps> = ({ pollId, onNavigate }) => {

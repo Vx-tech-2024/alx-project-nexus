@@ -3,24 +3,26 @@ import {
   ChevronLeft, ChevronRight, Plus, Trash2, Eye, Check, 
   AlertCircle, Info, Clock, Lock, Globe 
 } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
-import { Label } from '@/app/components/ui/label';
-import { Textarea } from '@/app/components/ui/textarea';
-import { Card } from '@/app/components/ui/card';
-import { Switch } from './components/switch';
-import { Badge } from './components/badge';
-import { useApp } from './context/AppContext';
-import { toast } from './components/sonner';
-import { PollOption, PollStatus, PollVisibility } from './types/index';
+import { Button } from './subcomponents/button';
+import { Input } from './subcomponents/input';
+import { Label } from './subcomponents/label';
+import { Textarea } from './subcomponents/textarea';
+import { Card } from './subcomponents/card';
+import { Switch } from './subcomponents/switch';
+import { Badge } from './subcomponents/badge';
+import { useApp } from '../context/AppContext';
+import { Toaster } from './subcomponents/sonner';
+import { toast } from "sonner";
+import { PollOption, PollStatus, PollVisibility } from '../types/index';
 import React from 'react';
 import { title } from 'process';
-
+import { Page } from '../types/index'
 interface CreatePollWizardProps {
-    onNavigate: (page: string, pollId?: string) => void;
+    onNavigate: (page: Page, pollId?: string) => void;
+
 }
 
-export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }) {
+export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }) => {
     const { createPoll, user } = useApp();
     const [currentStep, setCurrentStep] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -40,7 +42,7 @@ export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }
         status: 'active' as PollStatus
     });
 
-    const [ errors, setErrors ] = useState<Record<string, string>>({}),
+    const [ errors, setErrors ] = useState<Record<string, string>>({})
 
     const steps = [
         { number: 1, title: 'Basic info', description: 'Title & Description'},
