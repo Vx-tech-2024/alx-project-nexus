@@ -232,7 +232,7 @@ export const ResultsPage: React.FC<ResultsPageProps> = ({ pollId, onNavigate }) 
                           cx="50%"
                           cy="50%"
                           outerRadius={100}
-                          label={(entry) => `${entry.percentage}%`}
+                          label={({ percent }) => `${(percent! * 100).toFixed(1)}%`}
                         >
                           {chartData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />

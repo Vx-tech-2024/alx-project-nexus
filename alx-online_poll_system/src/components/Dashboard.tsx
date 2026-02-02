@@ -235,7 +235,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
 interface PollDashboardCardProps {
     poll: Poll;
-    onNavigate: (page: string, pollId?: string) => void;
+    onNavigate: (page: Page, pollId?: string) => void;
     onDelete: (pollId: string) => void;
     onClose: (pollId: string) => void;
 }

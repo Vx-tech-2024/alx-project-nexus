@@ -8,7 +8,7 @@ interface AppContextType extends AppState {
     signup: (name:string, email:string, password:string) => Promise<void>;
     loginAsGuest: () => void;
     logout: () => void;
-    createPoll: (poll: Omit<Poll, 'id' | 'creatorId' | 'creatorName' | 'createdAt' | 'totalVotes' | 'votedUsers'>) => Promise<String>;
+    createPoll: (poll: Omit<Poll, 'id' | 'creatorId' | 'creatorName' | 'createdAt' | 'totalVotes' | 'votedUsers'>) => Promise<string>;
     updatePoll: (pollId: string, updates: Partial<Poll>) => void;
     deletePoll: (pollId: string) => void;
     vote: (pollId: string, optionId: string) => Promise<void>;
@@ -75,7 +75,7 @@ export const AppProvider : React.FC<{ children: ReactNode }> = ({ children }) =>
         localStorage.removeItem('pollUser');
     };
 
-    const createPoll = async (poll: Omit<Poll, 'id' | 'creatorId' | 'creatorName' | 'createdAt' | 'totalVotes' | 'votedUsers'>) : Promise<String> => {
+    const createPoll = async (poll: Omit<Poll, 'id' | 'creatorId' | 'creatorName' | 'createdAt' | 'totalVotes' | 'votedUsers'>) : Promise<string> => {
         //simulating how api call works
         await new Promise(resolve => setTimeout(resolve, 1000));
 
