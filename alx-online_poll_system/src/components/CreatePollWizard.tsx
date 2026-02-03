@@ -260,7 +260,7 @@ const Step1: React.FC<any> = ({ pollData, setPollData, errors, setErrors }) => {
                 <Label htmlFor="title">Poll Title</Label>
                 <Input 
                   id="title"
-                  placeholder="What's your favourite programming language?"
+                  placeholder="The title of the poll"
                   value={pollData.title}
                   onChange={(e) => handleChange('title', e.target.value)}
                   className={errors.title ? 'border-red-500' : ''}
@@ -278,7 +278,7 @@ const Step1: React.FC<any> = ({ pollData, setPollData, errors, setErrors }) => {
                 <Label htmlFor="description">Desription *</Label>
                 <Textarea 
                   id="description"
-                  placeholder="Help us understand developer preferences in 2026 in consideration of AI. Your vote helps shape our community insights."
+                  placeholder="Description of the poll for people to understand"
                   value={pollData.description}
                   onChange={(e) => handleChange('description', e.target.value)}
                   rows={4}
