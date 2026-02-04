@@ -1,14 +1,14 @@
 // src/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 
-// Example: create an empty reducer for now
+// Example: creating an empty reducer for now
 const store = configureStore({
   reducer: {
-    // you will add slices here later
+    //for more updates slices will be added here
   },
 });
 
-// Optional: Infer types for TS
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

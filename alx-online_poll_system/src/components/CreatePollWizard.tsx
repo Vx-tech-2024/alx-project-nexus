@@ -1,8 +1,5 @@
 import  { useState } from 'react';
-import { 
-  ChevronLeft, ChevronRight, Plus, Trash2, Eye, Check, 
-  AlertCircle, Info, Clock, Lock, Globe 
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Plus, Trash2, Eye, Check,AlertCircle, Info, Clock, Lock, Globe } from 'lucide-react';
 import { Button } from './subcomponents/button';
 import { Input } from './subcomponents/input';
 import { Label } from './subcomponents/label';
@@ -23,6 +20,7 @@ interface CreatePollWizardProps {
 }
 
 export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }) => {
+    //Declaring them states
     const { createPoll, user } = useApp();
     const [currentStep, setCurrentStep] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -43,7 +41,7 @@ export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }
     });
 
     const [ errors, setErrors ] = useState<Record<string, string>>({})
-
+    //Declaring the steps for creating a poll
     const steps = [
         { number: 1, title: 'Basic info', description: 'Title & Description'},
         { number: 2, title: 'Options', description: 'Add poll Options'},
@@ -122,7 +120,7 @@ export const CreatePollWizard: React.FC<CreatePollWizardProps> = ({ onNavigate }
     const handlePublish = async () => {
         setLoading(true);
         try {
-            //Filtering out the empty options
+            //Filtering out the empty options that were added without data
             const validOptions = pollData.options.filter(opt => opt.text.trim());
 
             const pollId = await createPoll({

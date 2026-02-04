@@ -155,14 +155,5 @@ function NavigationMenuIndicator({
   );
 }
 
-export {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
-};
+export { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator,
+  NavigationMenuViewport, navigationMenuTriggerStyle,};

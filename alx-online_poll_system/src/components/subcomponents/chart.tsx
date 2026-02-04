@@ -5,14 +5,10 @@ import * as RechartsPrimitive from "recharts";
 import type { TooltipProps, LegendProps } from "recharts";
 import { cn } from "./utils";
 
-// ---------------------------
 // Theme CSS selector mapping
-// ---------------------------
 const THEMES = { light: "", dark: ".dark" } as const;
 
-// ---------------------------
 // Chart Config Types
-// ---------------------------
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode;
@@ -23,9 +19,7 @@ export type ChartConfig = {
   );
 };
 
-// ---------------------------
 // Chart Context
-// ---------------------------
 type ChartContextProps = { config: ChartConfig };
 
 const ChartContext = React.createContext<ChartContextProps | null>(null);
@@ -36,9 +30,7 @@ function useChart() {
   return context;
 }
 
-// ---------------------------
 // Chart Container
-// ---------------------------
 function ChartContainer({
   id,
   className,
@@ -70,9 +62,7 @@ function ChartContainer({
   );
 }
 
-// ---------------------------
 // Chart Style
-// ---------------------------
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(([, cfg]) => cfg.theme || cfg.color);
   if (!colorConfig.length) return null;
@@ -95,9 +85,7 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   );
 };
 
-// ---------------------------
 // Tooltip
-// ---------------------------
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
 type ChartTooltipItem = {
@@ -217,9 +205,7 @@ function ChartTooltipContent({
   );
 }
 
-// ---------------------------
 // Legend
-// ---------------------------
 const ChartLegend = RechartsPrimitive.Legend;
 
 type ChartLegendItem = RechartsPrimitive.LegendPayload;
@@ -272,9 +258,7 @@ function ChartLegendContent({
   );
 }
 
-// ---------------------------
 // Helper: get payload config
-// ---------------------------
 function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key: string) {
   if (typeof payload !== "object" || payload === null) return undefined;
 
@@ -292,9 +276,6 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
   return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config];
 }
 
-// ---------------------------
-// Export
-// ---------------------------
 export {
   ChartContainer,
   ChartTooltip,

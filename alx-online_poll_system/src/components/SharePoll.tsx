@@ -43,7 +43,8 @@ export const SharePoll: React.FC<SharePollProps> = ({ pollId, onNavigate }) => {
             });
         }
     };
-
+    
+    //Social media pages to share to
     const shareOptions = [
         {
             name: 'Twitter',

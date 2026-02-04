@@ -17,6 +17,7 @@ interface   AuthPageProps{
 }
 
 export const AuthPage: React.FC<AuthPageProps>= ({ mode, onNavigate }) => {
+    //Declaring the states 
     const { login, signup, loginAsGuest } = useApp();
     const [isLogin, setIsLogin] = useState(mode === 'login');
     const [loading, setLoading] = useState(false);
@@ -29,7 +30,8 @@ export const AuthPage: React.FC<AuthPageProps>= ({ mode, onNavigate }) => {
     });
 
     const [errors, setErrors] = useState<Record<string, string>>({});
-
+    
+    //Validating user input
     const validateForm = () => {
         const newErrors: Record<string, string> = {};
 
@@ -139,7 +141,7 @@ export const AuthPage: React.FC<AuthPageProps>= ({ mode, onNavigate }) => {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Obiero Oloo"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   className={`pl-10 ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}

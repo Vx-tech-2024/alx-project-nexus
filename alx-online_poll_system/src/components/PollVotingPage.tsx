@@ -96,7 +96,8 @@ export const PollVotingPage: React.FC<PollVotingPageProps> = ({ pollId, onNaviga
       setIsVoting(false);
     }
   };
-
+  
+  //handling the people who have voted to avoid duplicate voting
   if (alreadyVoted || voteSubmitted) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">

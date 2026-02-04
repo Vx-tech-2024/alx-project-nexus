@@ -6,19 +6,7 @@ import { Card } from './subcomponents/card';
 import { Badge } from './subcomponents/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './subcomponents/tabs';
 import { useApp } from '../context/AppContext';
-import {
-  BarChart,
-  Bar,
-  PieChart as RechartsPieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
+import { BarChart, Bar, PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Legend,} from 'recharts';
 import { Page } from '../types/index';
 interface ResultsPageProps {
   pollId: string;
