@@ -2,3 +2,4 @@
   base = "alx-online_poll_system"
   command = "CI=false npm run build"
   publish = "build"
+  
