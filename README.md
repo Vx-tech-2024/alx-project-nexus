@@ -1,145 +1,150 @@
-# alx-project-nexus
+# Poll Dynamics
 
-##  Project Objective
-
-This repository serves as a **documentation hub** for my major learnings throughout the **ALX ProDev Frontend Engineering Program**. It captures the tools, technologies, concepts, challenges, and best practices I encountered while building real-world frontend applications.
-
-The goal of this repository is to:
-
-* Demonstrate my understanding of modern frontend engineering
-* Document my growth and learning journey
-* Serve as a reference point for future projects and revisions
+Poll Dynamics is a modern, user-friendly online polling platform that allows users to create, share, and participate in polls while viewing live results and analytics. The system is designed to simulate a real-world SaaS product and serves as a frontend engineering assessment project built with scalability, usability, and clear user flows in mind.
 
 ---
 
-##  Program Overview
+##  Features
 
-The **ALX ProDev Engineering Program** is an intensive, hands-on training designed to prepare developers for real-world software engineering roles. The program emphasizes:
+###  User Authentication
 
-* Practical, project-based learning
-* Industry-standard tools and workflows
-* Writing clean, scalable, and maintainable code
-* Problem-solving and system-level thinking
+* Sign up and log in functionality
+* Guest access for viewing and voting on polls
+* Secure logout
 
-While this repository focuses on **Frontend Engineering**, the program also encourages collaboration with backend systems and APIs to build complete, production-ready applications.
+###  Onboarding & Landing Experience
 
----
+* Onboarding page as the first entry point
+* Landing page with platform insights
+* Poll cards displaying available polls
 
-##  Major Learnings
+###  Poll Creation 4-Step Wizard
 
-###  Key Technologies Covered
+1. **Basic Information**
 
-* **Web Development** – Modern HTML, CSS, and JavaScript
-* **Mobile Development** – Cross-platform development concepts using React Native and Expo
-* **Progressive Web Apps (PWA)** – Offline support, performance, and installability
-* **Git & GitHub** – Version control, branching strategies, and collaboration
-* **API Consumption** – RESTful APIs and third-party integrations
+   * Poll title
+   * Poll description
 
----
+2. **Poll Options**
 
-###  Core Frontend Engineering Concepts
+   * Create voting options (minimum of 2)
 
-####  Frameworks & Libraries
+3. **Poll Settings**
 
-* **React.js** – Component-based architecture, hooks, state management
-* **Next.js** – Server-side rendering (SSR), routing, and performance optimization
-* **ReactNative** - A mobile based architecture.
+   * Poll duration
+   * Poll visibility (public / private – private disabled for now)
+   * Number of votes allowed per user
 
-####  Styling & UI
+4. **Preview & Publish**
 
-* **Tailwind CSS** – Utility-first styling, responsive design, and design consistency
-* **Component Design Systems** – Reusable and scalable UI components
+   * Review poll details
+   * Publish poll for voting
 
-####  Type Safety & Data Handling
+###  Poll Sharing
 
-* **TypeScript** – Strong typing, interfaces, and improved developer experience
-* **GraphQL** – Query-based data fetching and efficient API communication
+After publishing a poll, users are redirected to a sharing page containing:
 
-####  API Integration
+* A shareable poll link
+* Social media share buttons
+* A QR code for quick access
+* Tips on how to get more votes
+* Quick navigation buttons to:
 
-* Fetching and managing data from REST and GraphQL APIs
-* Handling loading states, errors, and caching
+  * Dashboard
+  * Live results
 
-####  System Design & Analysis
+###  Voting System
 
-* Structuring frontend applications for scalability
-* Separation of concerns and modular architecture
-* Understanding data flow between frontend and backend
+* Authenticated users can vote on polls
+* Only one vote allowed per user
+* Users who revisit a poll they have already voted on are redirected to the results page
 
----
+###  Live Results
 
-##  Challenges Faced & Solutions
+* Real-time or refreshed poll results
+* Conditional redirection if a user has not voted
 
-### 1. State Management Complexity
+###  User Dashboard
 
-**Challenge:** Managing shared state across multiple components.
+The dashboard provides an overview of user activity, including:
 
-**Solution:**
-
-* Leveraged React hooks effectively
-* Broke down components into smaller, reusable units
-* Applied clear data flow patterns
-
----
-
-### 2. Tooling & Configuration Issues
-
-**Challenge:** Build errors, dependency conflicts, and environment setup issues.
-
-**Solution:**
-
-* Read official documentation carefully
-* Used consistent project structures
-* Learned debugging through error logs and stack traces
+* Total number of polls created
+* Active polls (non-expired)
+* Total votes across all polls
+* Average votes per poll
+* Clickable active poll cards that redirect to voting pages
 
 ---
 
-### 3. Performance Optimization
+##  User Journey Overview
 
-**Challenge:** Slow renders and unnecessary re-renders.
+1. User opens the app → Onboarding page
+2. User proceeds to the landing page
+3. User logs in, signs up, or continues as a guest
+4. Authenticated users can:
 
-**Solution:**
-
-* Applied memoization where necessary
-* Optimized component structure
-* Used Next.js features like SSR and static generation
-
----
-
-##  Best Practices Learned
-
-* Write **clean, readable, and maintainable code**
-* Use **Git commits** with clear and meaningful messages
-* Break features into **small, testable components**
-* Always consider **performance and accessibility**
-* Follow **mobile-first and responsive design** principles
-* Read documentation before relying on tutorials
+   * Create a poll
+   * Vote on polls
+   * View live results
+   * Access their dashboard
+5. After poll creation, users can share polls and track engagement via the dashboard
 
 ---
 
-##  Personal Takeaways
+##  Tech Stack
 
-* Frontend engineering is more than UI — it involves architecture, performance, and system thinking
-* Strong fundamentals make learning new frameworks easier
-* Debugging is a core skill, not a weakness
-* Consistency and practice matter more than speed
-
----
-
-##  Future Improvements
-
-* Add diagrams for system design explanations
-* Include screenshots and demos of completed projects
-* Expand documentation as new skills are acquired
+* **Frontend:** React + TypeScript
+* **State Management:** Redux
+* **Styling:** CSS / Tailwind / Styled Components (depending on implementation)
+* **Build Tool:** Vite / CRA (depending on setup)
+* **Deployment:** Netlify
 
 ---
 
-##  Conclusion
+##  Installation & Setup
 
-This repository represents my continuous growth as a **Frontend Engineer** through the ALX ProDev program. It will evolve as I deepen my skills, explore backend integration, and build more complex systems.
+```bash
+# To Clone the repository use this command
+git clone https://github.com/Vx-tech-2024/alx-project-nexus
+
+# Navigate to project directory
+cd alx-online_poll_system
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
 
 ---
 
- **Repository Name:** `alx-project-nexus`
+##  Deployment
 
- **Program:** ALX ProDev Frontend Engineering
+The project is configured for deployment on **Netlify**.
+
+
+---
+
+##  Future Enhancements
+
+* Private polls with access control
+* Real-time updates using WebSockets
+* Poll expiration handling
+* Enhanced analytics and charts
+* Admin moderation tools
+
+---
+
+##  License
+
+This project is for educational and assessment purposes.
+
+---
+
+##  Author
+
+**Joel Birundu George**
+Frontend Engineer | Mathematics & Computer Science
+
+---
